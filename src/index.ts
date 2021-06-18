@@ -1,4 +1,4 @@
-import routes from './router/router';
+import routes from './router/home';
 import Serve, { ViewEngine } from './serve';
 import { Request, Response } from 'express';
 

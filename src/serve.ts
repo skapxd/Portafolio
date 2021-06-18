@@ -12,10 +12,14 @@ export enum ViewEngine{
     EJS = 'ejs' 
 }
 
-interface Constructor {
-    routes?: Router[]
+interface DDos {
     burst?: number 
     limit?: number
+}
+
+interface Constructor {
+    ddosConfig?: DDos
+    routes?: Router[]
     port: string | number 
     viewEngine?: ViewEngine
     ifProductionMode?: boolean
@@ -31,20 +35,22 @@ export default class Serve {
     constructor({
         port,
         routes,
-        burst = 10,
-        limit = 15,
-        routError,
+        ddosConfig = {
+            burst: 10,
+            limit: 15,
+        },
+        routError, 
         viewEngine,
         ifProductionMode: productionMode
     } : Constructor ) {
 
-        const ddos = new Ddos({burst:burst, limit:limit})
+        const ddos = new Ddos({burst: ddosConfig.burst, limit: ddosConfig.limit})
         
         // middlewares 
         this.app.use( cors() );
         this.app.use( morgan('dev') );
         this.app.use( express.json() );
-        this.app.use( ddos.express);
+        // this.app.use( ddos.express);
 
         // Eliminar encabezado
         this.app.disable('x-powered-by');

@@ -1,12 +1,12 @@
 import { Router } from 'express'
-import { getRoot } from '../controller/controller';
+import { getHome } from '../controller/home';
 
 const router = Router();
 
 router.get(
     /* Nombre de ruta -->*/ '/', 
     [ /* Array de middlewares*/ ],  
-    /* Controller -->*/ getRoot 
+    /* Controller -->*/ getHome 
 );
 
 export default router;
