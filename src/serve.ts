@@ -29,15 +29,16 @@ interface Constructor {
 
 export default class Serve {
 
-    public app = express();
-    private numCpu = os.cpus().length; 
+    public expressApp = express();
+    private numCpu = os.cpus().length;
+    
 
     constructor({
         port,
         routes,
         ddosConfig = {
-            burst: 10,
-            limit: 15,
+            burst: 200,
+            limit: 100,
         },
         routError, 
         viewEngine,
@@ -47,34 +48,34 @@ export default class Serve {
         const ddos = new Ddos({burst: ddosConfig.burst, limit: ddosConfig.limit})
         
         // middlewares 
-        this.app.use( cors() );
-        this.app.use( morgan('dev') );
-        this.app.use( express.json() );
-        // this.app.use( ddos.express);
+        this.expressApp.use( cors() );
+        this.expressApp.use( morgan('dev') );
+        this.expressApp.use( express.json() );
+        this.expressApp.use( ddos.express );
 
         // Eliminar encabezado
-        this.app.disable('x-powered-by');
+        this.expressApp.disable('x-powered-by');
 
         // Static content
-        this.app.use( express.static( 'public' ) );
+        this.expressApp.use( express.static( 'public' ) );
         
         // List of routes
         if (routes) {
 
-            this.app.use(...routes)
+            this.expressApp.use(...routes)
         }
 
         // If the server is a web service
         if (viewEngine) {
             
-            this.app.set('view engine', viewEngine);
-            this.app.set('views', './public');
+            this.expressApp.set('view engine', viewEngine);
+            this.expressApp.set('views', './public');
         }
         
         // If the path does not exist
         if (routError) {
 
-            this.app.use(routError);
+            this.expressApp.use(routError);
         } 
 
         if (productionMode) {
@@ -91,14 +92,14 @@ export default class Serve {
                 })
             
             } else {
-                this.app.listen( port, () => {
+                this.expressApp.listen( port, () => {
                     console.log(`Server at ${ process.pid } @ http://localhost:${ port }`)
                 });
             }
             
         } else {
 
-            this.app.listen( port, () => {
+            this.expressApp.listen( port, () => {
                 console.log(`Server at ${ process.pid } @ http://localhost:${ port }`)
             });
         }
