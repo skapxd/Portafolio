@@ -1,8 +1,9 @@
 
 const injectPopup = () => {
-    const body = document.querySelector('body')
+    const popup = document.querySelector('#popup')
+    // const body = document.querySelector('body')
 
-    body.innerHTML += `
+    popup.innerHTML += `
         <div class="popup fade-in">
 
             <div class="popup__bg" onclick="rejectPopup()"></div>
