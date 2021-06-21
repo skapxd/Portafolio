@@ -5,7 +5,7 @@ const injectPopup = () => {
     body.innerHTML += `
         <div class="popup fade-in">
 
-            <div class="popup__bg"></div>
+            <div class="popup__bg" onclick="rejectPopup()"></div>
 
             <div class="popup__wrapper">
 

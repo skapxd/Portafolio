@@ -26,7 +26,7 @@ class Serve {
         this.expressApp.use(cors_1.default());
         this.expressApp.use(morgan_1.default('dev'));
         this.expressApp.use(express_1.default.json());
-        // this.expressApp.use( ddos.express );
+        this.expressApp.use(ddos.express);
         // Eliminar encabezado
         this.expressApp.disable('x-powered-by');
         // Static content
