@@ -12,18 +12,23 @@
   }
 }
 
-/* Just add .fade-out class to element */
+// 
 
-.fade-out {
-	animation: fadeOut 0.3s ease;
-  	opacity: 0;
-}
+// span.ripple {
+//   position: absolute; /* The absolute position we mentioned earlier */
+//   border-radius: 50%;
+//   // transform: scale(0);
+//   height: 50px!important;
+//   width: 50px!important;
+//   // animation: ripple 600ms linear;
+//   background-color: red!important;
+//   // background-color: rgba(255, 255, 255, 0.7);
+//   z-index: 10000000;
+// }
 
-@keyframes fadeOut {
-  from {
-  	opacity: 1;
-  }
-  to {
- 	opacity: 0;
-  }
-}
+// @keyframes ripple {
+//   to {
+//     transform: scale(4);
+//     opacity: 0;
+//   }
+// }

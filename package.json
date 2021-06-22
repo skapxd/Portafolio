@@ -6,9 +6,10 @@
   "scripts": {
     "dev": "nodemon",
     "build": "tsc",
+    "git-commit" : "git commit -am 'change password email'",
     "gcp": "gcloud app deploy",
     "git-push": "git push",
-    "deploy": "run-s build git-push gcp",
+    "deploy": "run-s build  git-push gcp",
     "start": "node dist/index.js",
     "ddos": "loadtest -n 100000 --rps 200 -c 1000 https://allapp.app"
   },

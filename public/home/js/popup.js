@@ -23,7 +23,7 @@ const injectPopup = () => {
                     contigo por correo o celular
                 </h2>
 
-                <div class="popup__wrapper__btn" onclick="rejectPopup()">
+                <div class="popup__wrapper__btn " onclick="rejectPopup()">
                     <p>
                         Entendido
                     </p>

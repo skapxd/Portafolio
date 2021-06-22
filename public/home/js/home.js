@@ -89,3 +89,14 @@ new Splide('.splide', {
         right: '4vw'
     },
 }).mount();
+
+new Splide('#Proyectos-2', {
+    perPage: 2,
+    autoHeight: true,
+    autoWidth: true,
+    arrows: false,
+    padding: {
+        left: '5vw',
+        right: '2vw'
+    },
+}).mount();
