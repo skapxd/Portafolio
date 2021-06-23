@@ -37,7 +37,4 @@ new serve_1.default({
     routError: (req, res) => {
         return res.send('page not found');
     },
-    // middleware: [
-    //     minifyHtml
-    // ]
 });
