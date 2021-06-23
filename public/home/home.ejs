@@ -1,11 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<!-- 
-    Carouse
-    https://splidejs.com/#06
- -->
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -22,7 +17,7 @@
 
     <div id="desktop">
 
-        <div class="header">
+        <header class="header">
 
             <img class="header__logo" src="/assets/brand/logo.svg" alt="skapxD logo">
 
@@ -33,7 +28,7 @@
             <a href="#Servicios" class="header__option">Servicios </a>
             <a href="#Contacto" class="header__option">Contacto </a>
 
-        </div>
+        </header>
 
         <div class="aplicaciones-que-impactan">
 
@@ -51,8 +46,9 @@
 
                 <!-- onclick="injectPopup()"  -->
                 <a
-                href="#Contacto" 
-                class="aplicaciones-que-impactan__col__btn-contacto">
+                    id="Proyectos"
+                    href="#Contacto" 
+                    class="aplicaciones-que-impactan__col__btn-contacto">
                     <p>
                         Contáctame
                     </p>
@@ -67,7 +63,7 @@
 
         </div>
 
-        <div class="splide" id="Proyectos">
+        <div class="splide" >
             <div class="splide__track">
                 <ul class="splide__list">
 
@@ -209,6 +205,11 @@
 
                 <div class="tecnologia__col__list-tecnologia-row">
 
+                    <a href="https://github.com/" target="_black">
+                        <img src="/assets/tecnology/github.svg" class="tecnologia__col__list-tecnologia-row__item"
+                            alt="javascript">
+                    </a>
+
                     <a href="https://nodejs.org/en/" target="_black">
                         <img src="/assets/tecnology/node.svg" class="tecnologia__col__list-tecnologia-row__item" alt="node">
                     </a>
@@ -254,7 +255,6 @@
                         <img src="/assets/tecnology/sass-2.svg" class="tecnologia__col__list-tecnologia-row__item"
                             alt="javascript">
                     </a>
-
                 </div>
 
             </div>
@@ -374,12 +374,6 @@
 
                     <div class="contacto__row-input__input-group">
 
-                        <!-- <textarea class="contacto__row-input__input-group__input"
-                            name="mensaje" 
-                            id="mensaje" 
-                            cols="30" 
-                            rows="10"></textarea> -->
-
                         <input class="contacto__row-input__input-group__input" type="text" id="mensaje" name="mensaje"
                             placeholder="Si, veras....">
 
@@ -392,7 +386,6 @@
 
                 </div>
 
-                <!-- <input type="submit" value="Enviar datos" class="contacto__row-input__input-group__submit"> -->
                 <button class="contacto__row-input__input-group__submit" type="submit">
                     <p>
                         Enviar datos
@@ -431,10 +424,6 @@
 
             <div class="expanded-1"></div>
 
-            <img src="/assets/brand/menu.svg" 
-                alt="menu"
-                class="header__menu"
-                >
         </header>
 
         <div class="aplicaciones-que-impactan">
@@ -543,6 +532,129 @@
             </div>
         </div>
 
+        <div class="divider"></div>
+
+        <div class="quien-soy">
+
+            <div class="quien-soy__title">¿Quien soy?</div>
+
+            <p class="quien-soy__sub-title">
+                Mi nombre es Manu Londoño, soy <br>
+                desarrollador web y mobile. 
+                Me dedico exclusivamente a crear <br>
+                productos digitales  para todo <br>
+                Latinoamérica. 
+            </p>
+
+            <div class="quien-soy__row">
+    
+                <img src="/assets/brand/photo.png" class="quien-soy__row__img" alt="Manuel Londoño">
+            
+                
+                <div class="quien-soy__row__col">
+    
+                    <div class="quien-soy__row__col__item">
+                        <div class="quien-soy__row__col__item__title">
+                            2
+                        </div>
+    
+                        <div class="quien-soy__row__col__item__sub-title">
+                            años de <br>
+                            experiencia
+                        </div>
+                    </div>
+    
+                    <div class="quien-soy__row__col__item">
+                        <div class="quien-soy__row__col__item__title">
+                            10
+                        </div>
+    
+                        <div class="quien-soy__row__col__item__sub-title">
+                            proyectos <br>
+                            exitosos
+                        </div>
+                    </div>
+    
+    
+    
+                </div>
+    
+            </div>
+        </div>
+
+        <div class="divider"></div>
+        
+
+        <div class="tecnologias">
+
+            <div class="tecnologias__title">
+                Tecnologías
+            </div>
+
+            <div class="tecnologias__sub-title">
+                Mi objetivo es que los productos <br>
+                creados siempre estén realizados con <br>
+                las tecnologías más actuales y robustas.
+            </div>
+
+            <div class="tecnologias__list-items">
+
+                <a href="https://github.com/" target="_black">
+                    <img src="/assets/tecnology/github.svg" class="tecnologias__list-items__item"
+                        alt="javascript">
+                </a>
+
+                <a href="https://nodejs.org/en/" target="_black">
+                    <img src="/assets/tecnology/node.svg" class="tecnologias__list-items__item" alt="node">
+                </a>
+
+                <a href="https://flutter.dev/" target="_black">
+                    <img src="/assets/tecnology/flutter.svg" class="tecnologias__list-items__item"
+                        alt="flutter">
+                </a>
+
+                <a href="https://dart.dev/" target="_black">
+                    <img src="/assets/tecnology/dart.svg" class="tecnologias__list-items__item"
+                        alt="dart">
+                </a>
+
+                <a href="https://cloud.google.com/" target="_black">
+                    <img src="/assets/tecnology/gcp.svg" class="tecnologias__list-items__item" alt="gcp">
+                </a>
+
+                <a href="https://firebase.google.com/" target="_black">
+                    <img src="/assets/tecnology/firebase.svg" class="tecnologias__list-items__item"
+                        alt="firebase">
+                </a>
+
+                <a href="https://azure.microsoft.com/en-us/" target="_black">
+                    <img src="/assets/tecnology/azure.svg" class="tecnologias__list-items__item"
+                        alt="azure">
+                </a>
+
+                <a href="https://www.w3schools.com/html/" target="_black">
+                    <img src="/assets/tecnology/html.svg" class="tecnologias__list-items__item" alt="html">
+                </a>
+
+                <a href="https://www.w3schools.com/js/" target="_black">
+                    <img src="/assets/tecnology/javascript.svg" class="tecnologias__list-items__item"
+                        alt="javascript">
+                </a>
+
+                <a href="https://www.w3schools.com/css/" target="_black">
+                    <img src="/assets/tecnology/css.svg" class="tecnologias__list-items__item" alt="css">
+                </a>
+
+                <a href="https://sass-lang.com/" target="_black">
+                    <img src="/assets/tecnology/sass-2.svg" class="tecnologias__list-items__item"
+                        alt="javascript">
+                </a>
+
+            </div>
+
+        </div>
+
+        <div class="divider"></div>
 
 
     </div>

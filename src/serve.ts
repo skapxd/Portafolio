@@ -5,6 +5,7 @@ import express from 'express';
 import morgan from 'morgan';
 import cors from 'cors';
 import { Router, Request, Response } from 'express';
+import { minifyHtml, minifyHtml2 } from './middleware/minify_html';
 
 const Ddos = require('ddos')
 
@@ -23,6 +24,7 @@ interface Constructor {
     port: string | number 
     viewEngine?: ViewEngine
     ifProductionMode?: boolean
+    middleware?: any[]
     routError?: (req: Request, res: Response) => void;
 }
 
@@ -42,7 +44,8 @@ export default class Serve {
         },
         routError, 
         viewEngine,
-        ifProductionMode: productionMode
+        ifProductionMode: productionMode,
+        middleware
     } : Constructor ) {
 
         const ddos = new Ddos({burst: ddosConfig.burst, limit: ddosConfig.limit})
@@ -71,6 +74,13 @@ export default class Serve {
             this.expressApp.set('view engine', viewEngine);
             this.expressApp.set('views', './public');
         }
+
+        this.expressApp.use(minifyHtml2)
+        // Middlewares
+        if (middleware) {
+            
+            this.expressApp.use(...middleware);
+        }
         
         // If the path does not exist
         if (routError) {
@@ -80,7 +90,7 @@ export default class Serve {
 
         if (productionMode) {
 
-            // User All thread enable
+            // User All thread enable 
             if (cluster.isMaster) {
                 for (let i = 0; i < this.numCpu; i++) {
                     

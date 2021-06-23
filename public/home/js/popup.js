@@ -1,7 +1,6 @@
 
 const injectPopup = () => {
     const popup = document.querySelector('#popup')
-    // const body = document.querySelector('body')
 
     popup.innerHTML += `
         <div class="popup fade-in">
@@ -41,7 +40,6 @@ const rejectPopup = () => {
 
     listPopup.forEach( (popup) => {
 
-        // popup.parentNode.removeChild(popup);
         popup.remove()
     })
 

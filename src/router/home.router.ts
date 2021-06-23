@@ -1,6 +1,6 @@
 import { Router } from 'express';
 import { getHome } from '../controller/home.controller';
-import { cache, finalParagraphInterceptor } from '../middleware/memory_cache';
+import { cache } from '../middleware/memory_cache';
 
 // const cache = require('express-redis-cache');
 

@@ -97,6 +97,6 @@ new Splide('#Proyectos-2', {
     arrows: false,
     padding: {
         left: '5vw',
-        right: '2vw'
+        right: '5vw'
     },
 }).mount();

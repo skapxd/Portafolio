@@ -9,8 +9,8 @@ interface Body {
     nombreEmpresa: string
 }
 
-const msjText = (data: Body) => {
-    return `
+const msjTextSkapxd = (data: Body) => {
+return `
 Tienes un nuevo registro del portafolio
 nombre: ${data.nombre}        
 correo: ${data.correo}        
@@ -20,6 +20,20 @@ nombre empresa: ${data.nombreEmpresa}
 mensaje: ${data.mensaje}        
 `
 }
+
+
+const msjTextClient = (data: Body) => {
+    return `
+    Tienes un nuevo registro del portafolio
+    nombre: ${data.nombre}        
+    correo: ${data.correo}        
+    telefono: ${data.telefono}        
+    nombre empresa: ${data.nombreEmpresa}        
+    
+    mensaje: ${data.mensaje}        
+    `
+}
+    
 
 export const postPost = async ( req: Request, res: Response) => {
         
@@ -33,7 +47,17 @@ export const postPost = async ( req: Request, res: Response) => {
     }
     
     new Mail().sendMail('manuellondogno132@gmail.com',{
-        msjText: msjText({
+        msjText: msjTextSkapxd({
+            correo: body.correo,
+            mensaje: body.mensaje,
+            nombre: body.nombre,
+            nombreEmpresa: body.nombreEmpresa,
+            telefono: body.telefono
+        })
+    })
+
+    new Mail().sendMail( body.correo, {
+        msjText: msjTextSkapxd({
             correo: body.correo,
             mensaje: body.mensaje,
             nombre: body.nombre,

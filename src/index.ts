@@ -3,6 +3,7 @@ import Serve, { ViewEngine } from './serve';
 import { Request, Response } from 'express';
 import post from './router/api/post';
 
+
 const ifProductionMode = true ?? process.env.PORT ? true : false
 
 new Serve({
@@ -16,6 +17,9 @@ new Serve({
     routError: ( req: Request, res: Response ) => {
         
         return res.send('page not found')
-    }
+    },
+    // middleware: [
+    //     minifyHtml
+    // ]
 });
 
