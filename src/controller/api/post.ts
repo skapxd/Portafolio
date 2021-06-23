@@ -24,12 +24,12 @@ mensaje: ${data.mensaje}
 
 const msjTextClient = (data: Body) => {
     return `
-    Hola, ${ data.nombre }, Tu información ha sido enviada exitosamente
+Hola ${ data.nombre }, Tu información ha sido enviada exitosamente
 
-    Dentro de las próximas 24 horas me estaré comunicando contigo por correo o celular
+Dentro de las próximas 24 horas me estaré comunicando contigo por correo o celular
 
-    Porfavor, no responder a este email.
-    `
+Porfavor, no responder a este email.
+`
 }
     
 
