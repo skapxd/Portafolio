@@ -3,7 +3,6 @@ import { postPost } from '../../controller/api/post';
 
 const post = Router();
 
-
 post.post(
     /* Nombre de ruta -->*/ '/post', 
     [ /* Array de middlewares*/  ],  

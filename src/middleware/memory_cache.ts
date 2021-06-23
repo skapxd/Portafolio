@@ -1,5 +1,5 @@
 import mcache from "memory-cache";
-import { Request, Response, NextFunction, Send } from 'express';
+import { Request, Response, NextFunction } from 'express';
 
 
 export const cache = (duration: number) => {

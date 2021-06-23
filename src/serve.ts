@@ -5,7 +5,6 @@ import express from 'express';
 import morgan from 'morgan';
 import cors from 'cors';
 import { Router, Request, Response } from 'express';
-import { minifyHtml, minifyHtml2 } from './middleware/minify_html';
 
 const Ddos = require('ddos')
 
@@ -33,7 +32,6 @@ export default class Serve {
 
     public expressApp = express();
     private numCpu = os.cpus().length;
-    
 
     constructor({
         port,
@@ -44,7 +42,7 @@ export default class Serve {
         },
         routError, 
         viewEngine,
-        ifProductionMode: productionMode,
+        ifProductionMode,
         middleware
     } : Constructor ) {
 
@@ -57,7 +55,7 @@ export default class Serve {
         this.expressApp.use( ddos.express );
 
         // Eliminar encabezado
-        this.expressApp.disable('x-powered-by');
+        this.expressApp.disable( 'x-powered-by' );
 
         // Static content
         this.expressApp.use( express.static( 'public' ) );
@@ -75,7 +73,6 @@ export default class Serve {
             this.expressApp.set('views', './public');
         }
 
-        this.expressApp.use(minifyHtml2)
         // Middlewares
         if (middleware) {
             
@@ -88,7 +85,7 @@ export default class Serve {
             this.expressApp.use(routError);
         } 
 
-        if (productionMode) {
+        if (ifProductionMode) {
 
             // User All thread enable 
             if (cluster.isMaster) {
