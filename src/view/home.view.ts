@@ -1,22 +1,22 @@
-import { Attr, CreateDoubleTag, HtmlTag, MetaTag } from "../plugin/html";
+// import { Attr, CreateDoubleTag, HtmlTag, MetaTag } from "../plugin/html";
 
-export const html = HtmlTag({
-    lang: 'es',
-    // attr
+// export const html = HtmlTag({
+//     lang: 'es',
+//     // attr
     
-    head: {
-        title: 'hola',
+//     head: {
+//         title: 'hola',
             
-        meta: [
-            Attr({
-                name: 'charset',
-                value: 'UTF-8'
-            })
-        ]
-    },
-    body: [
-        new CreateDoubleTag({
-            children: ['hola']
-        }).getTag()
-    ]
-})
+//         meta: [
+//             Attr({
+//                 name: 'charset',
+//                 value: 'UTF-8'
+//             })
+//         ]
+//     },
+//     body: [
+//         new CreateDoubleTag({
+//             children: ['hola']
+//         }).getTag()
+//     ]
+// })

@@ -10,8 +10,18 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.getHome = void 0;
+const html_minifier_1 = require("html-minifier");
 const getHome = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     let key = '__express__' + req.originalUrl || req.url;
-    return res.render('home/home');
+    return res.render('home/home', {}, (err, html) => {
+        html = html_minifier_1.minify(html, {
+            collapseInlineTagWhitespace: true,
+            collapseWhitespace: true,
+            minifyCSS: true,
+            minifyJS: true
+        });
+        // mcache.put(key, html, 1000 * 1000, );
+        res.send(html);
+    });
 });
 exports.getHome = getHome;

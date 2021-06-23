@@ -14,7 +14,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.postPost = void 0;
 const Mail_1 = __importDefault(require("../../mail/Mail"));
-const msjText = (data) => {
+const msjTextSkapxd = (data) => {
     return `
 Tienes un nuevo registro del portafolio
 nombre: ${data.nombre}        
@@ -25,6 +25,17 @@ nombre empresa: ${data.nombreEmpresa}
 mensaje: ${data.mensaje}        
 `;
 };
+const msjTextClient = (data) => {
+    return `
+    Tienes un nuevo registro del portafolio
+    nombre: ${data.nombre}        
+    correo: ${data.correo}        
+    telefono: ${data.telefono}        
+    nombre empresa: ${data.nombreEmpresa}        
+    
+    mensaje: ${data.mensaje}        
+    `;
+};
 const postPost = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const body = req.body;
     if (Object.keys(body).length === 0) {
@@ -33,7 +44,16 @@ const postPost = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
         });
     }
     new Mail_1.default().sendMail('manuellondogno132@gmail.com', {
-        msjText: msjText({
+        msjText: msjTextSkapxd({
+            correo: body.correo,
+            mensaje: body.mensaje,
+            nombre: body.nombre,
+            nombreEmpresa: body.nombreEmpresa,
+            telefono: body.telefono
+        })
+    });
+    new Mail_1.default().sendMail(body.correo, {
+        msjText: msjTextSkapxd({
             correo: body.correo,
             mensaje: body.mensaje,
             nombre: body.nombre,

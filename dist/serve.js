@@ -9,6 +9,7 @@ const os_1 = __importDefault(require("os"));
 const express_1 = __importDefault(require("express"));
 const morgan_1 = __importDefault(require("morgan"));
 const cors_1 = __importDefault(require("cors"));
+const minify_html_1 = require("./middleware/minify_html");
 const Ddos = require('ddos');
 var ViewEngine;
 (function (ViewEngine) {
@@ -18,7 +19,7 @@ class Serve {
     constructor({ port, routes, ddosConfig = {
         burst: 200,
         limit: 100,
-    }, routError, viewEngine, ifProductionMode: productionMode }) {
+    }, routError, viewEngine, ifProductionMode: productionMode, middleware }) {
         this.expressApp = express_1.default();
         this.numCpu = os_1.default.cpus().length;
         const ddos = new Ddos({ burst: ddosConfig.burst, limit: ddosConfig.limit });
@@ -40,12 +41,17 @@ class Serve {
             this.expressApp.set('view engine', viewEngine);
             this.expressApp.set('views', './public');
         }
+        this.expressApp.use(minify_html_1.minifyHtml2);
+        // Middlewares
+        if (middleware) {
+            this.expressApp.use(...middleware);
+        }
         // If the path does not exist
         if (routError) {
             this.expressApp.use(routError);
         }
         if (productionMode) {
-            // User All thread enable
+            // User All thread enable 
             if (cluster_1.default.isMaster) {
                 for (let i = 0; i < this.numCpu; i++) {
                     cluster_1.default.fork();

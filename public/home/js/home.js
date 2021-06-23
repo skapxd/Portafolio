@@ -1,13 +1,20 @@
 const listInput = document.querySelectorAll('.contacto__row-input__input-group__input');
+const listInputMovil = document.querySelectorAll('.contacto__form__input-group__input');
+
 const listLabel = document.querySelectorAll('label');
+const listLabelMovil = document.querySelectorAll('.contacto__form__input-group__label');
+
 const formDesktop = document.getElementById('formDesktop')
+const formMovil = document.getElementById('formMovil')
 
-
-listInput.forEach( (input, index) => {
+const cssForm = (input, index) => {
 
     input.addEventListener('focus', function(e) {
+
+        console.log('object');
         
         listLabel[index].classList.add("active")
+        listLabelMovil[index].classList.add("active")
     })
 
     input.addEventListener('blur', function(e) {
@@ -17,10 +24,16 @@ listInput.forEach( (input, index) => {
         if (!value || value === '') {
 
             listLabel[index].classList.remove("active")
+            listLabelMovil[index].classList.remove("active")
             
         }
     })
-})
+}
+
+
+listInput.forEach( cssForm )
+listInputMovil.forEach( cssForm )
+
 
 const processData = async ( form ) => {
 
@@ -76,6 +89,14 @@ formDesktop.addEventListener('submit', function(e) {
     e.preventDefault()
 
     processData(formDesktop)
+})
+
+
+formMovil.addEventListener('submit', function(e) {
+
+    e.preventDefault()
+
+    processData(formMovil)
 })
 
 
