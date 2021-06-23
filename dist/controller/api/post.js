@@ -27,13 +27,11 @@ mensaje: ${data.mensaje}
 };
 const msjTextClient = (data) => {
     return `
-    Tienes un nuevo registro del portafolio
-    nombre: ${data.nombre}        
-    correo: ${data.correo}        
-    telefono: ${data.telefono}        
-    nombre empresa: ${data.nombreEmpresa}        
-    
-    mensaje: ${data.mensaje}        
+    Hola, ${data.nombre}, Tu información ha sido enviada exitosamente
+
+    Dentro de las próximas 24 horas me estaré comunicando contigo por correo o celular
+
+    Porfavor, no responder a este email.
     `;
 };
 const postPost = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
@@ -53,7 +51,7 @@ const postPost = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
         })
     });
     new Mail_1.default().sendMail(body.correo, {
-        msjText: msjTextSkapxd({
+        msjText: msjTextClient({
             correo: body.correo,
             mensaje: body.mensaje,
             nombre: body.nombre,
