@@ -9,5 +9,20 @@
             "savePath": null
         }
     ],
+    "sqltools.connections": [
+        {
+            "mysqlOptions": {
+                "authProtocol": "default"
+            },
+            "previewLimit": 50,
+            "server": "104.196.220.111",
+            "port": 3306,
+            "driver": "MySQL",
+            "name": "skapxd",
+            "database": "pyndele_landings",
+            "username": "skapxd",
+            "password": "zIeFNkhCzGEl9Bir"
+        }
+    ],
 
 }

@@ -1,17 +1,8 @@
 "use strict";
-var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
-    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
-    return new (P || (P = Promise))(function (resolve, reject) {
-        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
-        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
-        step((generator = generator.apply(thisArg, _arguments || [])).next());
-    });
-};
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.getHome = void 0;
 const html_minifier_1 = require("html-minifier");
-const getHome = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+const getHome = async (req, res) => {
     let key = '__express__' + req.originalUrl || req.url;
     return res.render('home/home', {}, (err, html) => {
         html = html_minifier_1.minify(html, {
@@ -23,5 +14,6 @@ const getHome = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
         // mcache.put(key, html, 1000 * 1000, );
         res.send(html);
     });
-});
+};
 exports.getHome = getHome;
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiaG9tZS5jb250cm9sbGVyLmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsiLi4vLi4vc3JjL2NvbnRyb2xsZXIvaG9tZS5jb250cm9sbGVyLnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7OztBQUVBLGlEQUF1QztBQUVoQyxNQUFNLE9BQU8sR0FBRyxLQUFLLEVBQUcsR0FBWSxFQUFFLEdBQWEsRUFBRSxFQUFFO0lBRTFELElBQUksR0FBRyxHQUFHLGFBQWEsR0FBRyxHQUFHLENBQUMsV0FBVyxJQUFJLEdBQUcsQ0FBQyxHQUFHLENBQUE7SUFFcEQsT0FBTyxHQUFHLENBQUMsTUFBTSxDQUNiLFdBQVcsRUFDWCxFQUFFLEVBQ0YsQ0FBQyxHQUFVLEVBQUUsSUFBWSxFQUFFLEVBQUU7UUFFekIsSUFBSSxHQUFHLHNCQUFNLENBQ1QsSUFBSSxFQUNKO1lBQ0ksMkJBQTJCLEVBQUUsSUFBSTtZQUNqQyxrQkFBa0IsRUFBRSxJQUFJO1lBQ3hCLFNBQVMsRUFBRSxJQUFJO1lBQ2YsUUFBUSxFQUFFLElBQUk7U0FFakIsQ0FDSixDQUFDO1FBRUYsd0NBQXdDO1FBRXhDLEdBQUcsQ0FBQyxJQUFJLENBQUMsSUFBSSxDQUFDLENBQUE7SUFDbEIsQ0FBQyxDQUNKLENBQUE7QUFDTCxDQUFDLENBQUE7QUF6QlksUUFBQSxPQUFPLFdBeUJuQiIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCBtY2FjaGUgZnJvbSBcIm1lbW9yeS1jYWNoZVwiO1xyXG5pbXBvcnQgeyBSZXF1ZXN0LCBSZXNwb25zZSB9IGZyb20gJ2V4cHJlc3MnO1xyXG5pbXBvcnQgeyBtaW5pZnkgfSBmcm9tIFwiaHRtbC1taW5pZmllclwiO1xyXG5cclxuZXhwb3J0IGNvbnN0IGdldEhvbWUgPSBhc3luYyAoIHJlcTogUmVxdWVzdCwgcmVzOiBSZXNwb25zZSkgPT4ge1xyXG4gICAgICAgIFxyXG4gICAgbGV0IGtleSA9ICdfX2V4cHJlc3NfXycgKyByZXEub3JpZ2luYWxVcmwgfHwgcmVxLnVybFxyXG5cclxuICAgIHJldHVybiByZXMucmVuZGVyKCBcclxuICAgICAgICAnaG9tZS9ob21lJyxcclxuICAgICAgICB7fSxcclxuICAgICAgICAoZXJyOiBFcnJvciwgaHRtbDogc3RyaW5nKSA9PiB7XHJcblxyXG4gICAgICAgICAgICBodG1sID0gbWluaWZ5KFxyXG4gICAgICAgICAgICAgICAgaHRtbCxcclxuICAgICAgICAgICAgICAgIHtcclxuICAgICAgICAgICAgICAgICAgICBjb2xsYXBzZUlubGluZVRhZ1doaXRlc3BhY2U6IHRydWUsXHJcbiAgICAgICAgICAgICAgICAgICAgY29sbGFwc2VXaGl0ZXNwYWNlOiB0cnVlLFxyXG4gICAgICAgICAgICAgICAgICAgIG1pbmlmeUNTUzogdHJ1ZSxcclxuICAgICAgICAgICAgICAgICAgICBtaW5pZnlKUzogdHJ1ZVxyXG4gICAgICAgICAgICAgIFxyXG4gICAgICAgICAgICAgICAgfSBcclxuICAgICAgICAgICAgKTtcclxuXHJcbiAgICAgICAgICAgIC8vIG1jYWNoZS5wdXQoa2V5LCBodG1sLCAxMDAwICogMTAwMCwgKTtcclxuXHJcbiAgICAgICAgICAgIHJlcy5zZW5kKGh0bWwpXHJcbiAgICAgICAgfVxyXG4gICAgKVxyXG59Il19
