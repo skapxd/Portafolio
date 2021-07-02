@@ -3,13 +3,14 @@ import "reflect-metadata";
 import dotenv from 'dotenv';
 dotenv.config();
 
-import routes from './router/home.router';
+import portafolio from './router/home.router';
 import Serve, { ViewEngine } from './serve';
 import { Request, Response } from 'express';
-import post from './router/api/post';
+import apiPortafolioPostForm from './router/api/post';
 
 import { createConnection } from "typeorm";
 import { credentialsDB } from './credentials';
+import pyndelePrincipal from "./router/pyndele/principal.router";
 
 createConnection({
     type: "mysql", 
@@ -34,8 +35,15 @@ new Serve({
     port: process.env.PORT || 3000,
     viewEngine: ViewEngine.EJS,
     routes: [
-        routes,
-        post
+        // Portafolio
+        portafolio,
+        apiPortafolioPostForm,
+
+        // Pyndele
+        pyndelePrincipal,
+
+        // Tecnología media celular
+
     ],
     routError: ( req: Request, res: Response ) => {
         

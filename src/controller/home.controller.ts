@@ -18,7 +18,6 @@ export const getHome = async ( req: Request, res: Response) => {
                     collapseWhitespace: true,
                     minifyCSS: true,
                     minifyJS: true
-              
                 } 
             );
 

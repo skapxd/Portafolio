@@ -1,0 +1,1454 @@
+
+$color1: #3A0563
+$color2: #EEEEEE
+$color3: #565656
+$color4: #ED306C
+$color5: #FFB000
+$color6: #B1B1B1
+$color7: #9C59F4
+$color8: #262526
+$color9: #DFDFDF
+$color10: #be2556
+$color11: #480981
+$color12: #29C4CD
+
+// @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap')
+
+$font:  'Poppins'
+
+    
+*
+    margin: 0
+    padding: 0
+    text-decoration: none
+    box-sizing:  border-box
+    font-family: $font
+    &:focus
+        outline: none
+
+
+a:active
+    text-decoration: none
+
+body
+    overflow-x: hidden  
+
+html 
+    scroll-behavior: smooth
+
+input,
+button
+    border: 0.1vw solid #fff0
+    &:focus
+        outline: none
+
+.col
+    display: flex
+    flex-direction: column
+
+.row
+    display: flex
+    flex-direction: row
+
+.video 
+    border-radius: 2vw;
+    box-shadow: 2vw 2vw 3vw  rgba(0, 0, 0, 0.4);
+
+    
+#Mobile
+    display: flex
+    flex-direction: column
+
+// Desktop
+@media only screen and (min-width: 751px)
+
+    .popup
+        display: flex
+        flex-direction: column
+        justify-content: center
+        align-items: center
+        height: 100vh
+        width: 100%
+        position: fixed
+        z-index: 100
+
+        &__bg
+            background: rgba(0, 0, 0, 0.4)
+            // background: linear-gradient(0.5turn, #FFF0, #000a)
+            height: 100vh
+            width: 100%
+            z-index: 100
+            position: absolute
+
+        &__wrapper
+            z-index: 200
+            border-radius: 2vw
+            width: 60vw
+            height: 40vw
+            box-shadow: 1vw 1vw 3vw rgba(0, 0, 0, 0.4)
+            display: flex
+            flex-direction: row
+
+            &__col-left
+                border-radius: 2vw 0 0 2vw
+                background: #FFF
+                width: 35vw
+                height: 100%
+                display: flex
+                flex-direction: column
+                // align-items: center
+                padding: 5vw 5vw
+                
+                &__logo
+                    height: 3vw
+                    // width: 9.5vw
+                    margin: 0 auto
+                    margin-bottom: 3vw
+
+                &__label
+                    font-size: 1vw
+                    color: $color6
+                    margin-left: 1vw
+                    margin-bottom: 0.5vw
+
+                &__input 
+                    padding: 0.5vw 1vw
+                    width: 100%
+                    background: $color9
+                    border-radius: 2vw
+                    margin-bottom: 1vw
+                    resize: none
+
+                &__submit
+                    background: $color4
+                    transition: background 0.3s ease
+                    padding: 0.6vw 0.5vw 
+                    width: 30%
+                    border-radius: 2vw
+                    margin: 0 auto
+                    cursor: pointer
+                    color: #FFF
+                    font-size: 1vw
+                    font-weight: 500
+                    letter-spacing: 0.1vw
+
+                    &:hover
+                        background: $color10
+
+            &__col-right 
+                width: 25vw
+                height: 100%
+                background: $color11
+                border-radius: 0 2vw 2vw 0
+                display: flex
+                flex-direction: column
+                justify-content: center
+                align-items: center
+                padding: 0 2vw
+
+                &__close
+                    position: relative
+                    height: 2vw
+                    top: -11vw
+                    margin-right: -20vw
+                    cursor: pointer
+
+                &__text
+                    // margin-top: 23vw
+                    font-size: 1.5vw
+                    color: #FFF
+                    line-height: 1.5
+
+                    & > span 
+                        color: $color12
+                        font-weight: 800
+                        font-size: 2vw
+
+                    & > img
+                        // display: none
+                        height: 5vw
+                        margin-top: -1vw
+                        // width: 6vw
+                        float: right
+
+    .popup-close
+        display: none
+
+
+
+    
+    #Mobile
+        display: none
+
+    .gallery .js-flickity
+        // display: flex
+        height: 10vw
+
+    .pliar-morado
+        z-index: -1
+        width: 26.6vw
+        height: 57vw
+        background: $color1
+        position: absolute
+        border-radius: 0 0 3.9vw 0
+
+        &__img-pyndele-b
+            width: 23vw
+            // height: 5vw
+            margin-top: 1.5vw
+            margin-left: 1.5vw
+
+        &__img-risa-cortada
+            margin-top: 35vw
+            width: 22vw
+
+    .navbar
+        display: flex
+        flex-direction: row
+        justify-content: flex-end
+        padding-top: 2.6vw
+
+        // width: 100%
+        // align-items: flex-end
+
+        &__equipo
+            // margin-left: 58vw
+            // width: 14.5vw
+            font-size: 1.59vw
+            font-weight: 800
+            // margin-top: 2.6vw
+            color: $color3
+            &::after
+                display: block
+                content: ''
+                width: 6vw
+                height: 0.3vw
+                margin: auto
+                margin-top: 0.3vw
+                background: $color4
+                transition: width 0.3s ease
+            &:hover::after
+                width: 100%
+                
+                
+
+
+        &__circulo
+            margin-left: 4vw
+            // width: 12.3vw
+            font-size: 1.59vw
+            font-weight: 800
+            // margin-top: 2.6vw
+            color: $color3
+            &::after
+                display: block
+                content: ''
+                width: 6vw
+                height: 0.3vw
+                margin: auto
+                margin-top: 0.3vw
+                background: $color4
+                transition: width 0.3s ease
+            &:hover::after
+                width: 100%
+
+        &__suscribete
+            margin-left: 4vw
+            margin-top: -0.5vw
+            margin-right: 4vw
+            font-size: 1.59vw
+            border-radius: 0.5vw
+            background: $color4
+            height: 3.5vw
+            width: 12vw
+            line-height: 1
+            // vertical-align: middle
+            text-align-last: center
+            // text-anchor: middle
+            padding: 0.9vw 0
+            cursor: pointer
+            color: #FFF
+            font-weight: 600
+            transition: background 0.3s ease
+            &:hover
+                background: $color10
+
+
+    .video-intro
+        // width: 80vw
+        // height: 37vw
+        width: 100%
+        align-items: center
+        justify-content: center
+
+        &__video
+            padding: 0
+            margin-top: 3vw
+            width: 65.75vw;
+            height: 37vw;
+            border-radius: 3vw
+            margin-left: 5vw
+            background: rgba(0, 0, 0, 0.4) 
+            object-fit: cover;
+            // background: url(img/background.webp) 
+
+        &__img-3ptos
+            height: 8vw
+            margin-left: 3vw
+
+        &__social-media
+            margin-top: 3vw
+            justify-content: flex-end
+            width: 65.5vw
+            height: 5vw
+
+            &__icon
+                height: 4vw
+                width: 5vw
+                margin: 0 1vw
+                transition: all 0.3s ease
+                &:hover
+                    width: 5vw
+                    height: 5vw
+
+    .mas-de-pyndele
+        margin-top: 3vw
+                
+        &__title
+            margin-top: 5vw
+            margin-left: 6.5vw
+            width: 17.5vw
+            line-height: 1.2
+            font-size: 2.7vw
+            color: $color4
+
+            span 
+                display: inline-block
+                width: 26vw
+                color: $color1
+
+        &__linea-amarilla
+            margin-left: 6.5vw
+            margin-top: 1vw
+            margin-bottom: 0.5vw
+            height: 0.5vw
+            background: $color5
+            width: 4vw
+
+        .paragraph
+            width: 53.7vw
+            margin-top: 3vw
+            margin-left: 13.7vw
+            font-size: 1.2vw
+            color: $color3
+
+            & span.bold
+                font-weight: 800
+                
+    .carrusel
+        margin-top: 4.5vw
+
+        &__title
+            background: $color9
+            padding: 0.5vw 1.5vw
+            border-radius: 5vw
+            margin: auto
+            color: $color1
+            font-size: 2.7vw
+
+
+            & span
+                color: $color7
+
+    .flickity-button-icon
+        height: 0
+        width: 0
+    .gallery
+        margin-bottom: 5vw
+        height: 32vw
+        position: inherit
+
+    .gallery-cell
+        // height: 32vw
+        cursor: grab
+        width: 100%
+        margin-top: 5vw
+        padding: 0 15vw
+        &:active
+            cursor: grabbing
+        
+    .nuestro-equipo
+        background: $color1
+        padding-top: 2.3vw
+        padding-bottom: 5.5vw
+        align-items: center       
+        width: 100%
+        transition: cursor 0.3s ease
+
+        &__title
+            color: #fff
+            font-size: 3.2vw
+            width: 13vw
+            line-height: 1.15
+            margin-left: 7.3vw
+            &::before
+                margin-left: -0.5vw
+                display: block
+                content: ''
+                width: 4.5vw
+                height: 0.3vw
+                margin-top: 0.3vw
+                background: $color5
+                transition: width 0.3s ease
+
+            & span
+                color: $color4
+
+        &__row
+            margin-left: 10.8vw
+
+            &__fila-1
+                margin-left: 9.2vw
+
+                &__perfil
+                    width: 11.7vw
+                    align-items: center
+                    margin-left: 9vw
+
+                    &__nombre
+                        font-size: 1.25vw
+                        color: #fff
+                        font-weight: 700
+                        & span
+                            font-weight: 300
+
+                    &__area
+                        margin-top: 0.1vw
+                        font-size: 1.25vw
+                        color: $color4
+                        font-weight: 700
+
+                    &__img
+                        margin-top: 0.4vw
+                        height: 8.5vw
+
+                        
+            &__fila-2
+
+                &__perfil
+                    width: 11.7vw
+                    align-items: center
+                    margin-left: 9vw
+
+                    &__nombre
+                        font-size: 1.25vw
+                        color: #fff
+                        font-weight: 700
+                        & span
+                            font-weight: 300
+
+                    &__area
+                        margin-top: 0.1vw
+                        font-size: 1.25vw
+                        color: $color4
+                        font-weight: 700
+
+                    &__img
+                        margin-top: 0.4vw
+                        height: 8.5vw
+
+    .aprende-emprender
+        margin-top: 2vw
+        margin-bottom: 2vw
+        justify-content: center
+        align-items: center
+
+        &__img
+            height: 31.4vw
+
+        &-col
+            
+            // align-items: center
+
+            
+            &__suscribete
+                margin-left: 4vw
+                margin-top: -0.5vw
+                margin-right: 4vw
+                font-size: 1.59vw
+                border-radius: 0.5vw
+                background: $color4
+                height: 3.5vw
+                width: 12vw
+                line-height: 1
+                // vertical-align: middle
+                text-align-last: center
+                // text-anchor: middle
+                padding: 0.9vw 0
+                cursor: pointer
+                color: #FFF
+                font-weight: 600
+                transition: background 0.3s ease
+                &:hover
+                    background: $color10
+
+            &__risa-gris
+                height: 8vw
+                margin-bottom: -5vw
+                margin-left: 20vw
+                opacity: 0.3
+                z-index: -1
+
+
+            &__text-1
+                width: 28.5vw
+                color: $color7
+                line-height: 1.2
+                font-size: 3.58vw
+                margin-left: 3vw
+
+            &__text-2
+                // width: 32vw
+                font-size: 2vw
+                color: #FFF
+                background: $color7
+                font-weight: 300
+                padding: 0.7vw 2vw
+                margin-top: 1vw
+                border-radius: 3vw 
+                margin-left: 3vw
+                line-height: 1.2
+                & > span 
+                    font-weight: 800
+    .pyndele-en-camino
+
+        &__text-1
+            text-align: center
+            color: $color4
+            margin-left: -20vw
+            font-size: 2.15vw
+
+            
+        &__text-2
+            text-align: center
+            font-size: 2.15vw
+            color: $color4
+            margin-left: 25vw
+            margin-top: -2.2vw
+            margin-bottom: 6vw
+
+        &__risa-gris
+            height: 9.5vw
+            display: inline
+
+        &__3-ptos
+            height: 1.2vw
+            margin-bottom: 5vw
+
+    .form
+        background: $color1
+        padding-left: 2vw
+        justify-content: center
+        padding-top: 3vw
+        padding-bottom: 5vw
+        z-index: 0
+
+        &__3ptos
+            height: 8vw
+            margin-right: 8.7vw
+            margin-left: -9vw
+            margin-top: 10vw
+
+        &__wrapper
+            background: #fff
+            width: 35vw
+            padding-left: 3vw
+            border-radius: 1.9vw
+            justify-content: center
+
+            &__contactanos
+                color: $color7
+                margin-top: -4vw
+                line-height: 1.2
+                font-size: 2.8vw
+                margin-bottom: 1vw
+                &::after
+                    display: block
+                    content: ''
+                    width: 12vw
+                    height: 0.3vw
+                    background: $color3
+                    transition: width 0.3s ease
+
+                &__img
+                    height: 8.1vw
+                    position: relative
+                    top: 2vw
+                    right: -3vw
+
+            &__input-text
+                border-bottom: 0.15vw
+                padding: 0.5vw 1vw 0.2vw 1vw
+                border-bottom-color: $color6
+                border-style: solid
+                width: 85%
+                font-size: 1vw
+                transition: border-bottom-color 0.3s ease
+                &:focus
+                    border-bottom-color: $color1
+                    
+
+            &__label
+                position: relative
+                top: -1.8vw
+                left: 1vw
+                height: 1vw
+                font-size: 1vw
+                transition: all 0.3s ease
+                color: $color3
+                font-weight: 600
+
+            // &__input-text:focus + .form__wrapper__label
+            //         font-size: 0.7vw
+            //         color: $color6
+            //         top: -2.8vw
+
+            & .active
+                    font-size: 0.7vw
+                    color: $color6
+                    top: -2.8vw
+
+            &__input-check
+                display: none;
+                transition: all 0.3s ease;
+
+            &__label-check
+                width: 27vw;
+                margin: 0.3vw;
+                color: #818282;
+                padding: 0.325vw 1vw ;
+                cursor: pointer;
+                position: relative;
+                transition: all 0.3s ease;
+                -webkit-transition: all 0.3s ease;
+                border-radius: 0.3vw;
+                font-size: 1.2vw
+                &:hover
+                    background-color: rgba(55, 5, 99, 0.1);
+                &::before
+                    content: '';
+                    height: 0.75vw;
+                    width: 0.75vw;
+                    display: inline-block;
+                    border: 0.125vw solid rgba(55, 5, 99, 0.5);
+                    border-radius: 0.325vw;
+                    margin-right: 0.625vw;
+                    transition: all 0.3s ease;
+                        
+            &__input-check:checked + .form__wrapper__label-check
+                background-color: #745CA3;
+                transition: all 0.3s ease;
+                color: white;
+            
+            &__input-check:checked + .form__wrapper__label-check::before
+                display: none;
+                margin-right: 0;
+        
+            &__btn
+                margin-top: 2vw;
+                width: 9.375vw;
+                margin-bottom: 2vw;
+                border: none;
+                color: #fff;
+                padding: 0.325vw 0;
+                background-color: #E7316C;
+                font-size: 1.125vw;
+                border-radius: 1.875vw;
+                cursor: pointer;
+                margin: 1vw auto;
+                transition: background-color 0.3s ease;
+                margin-left: 10vw
+
+            &__error
+                width: 27vw
+                margin-top: 1vw
+                font-size:  1vw
+                color: rgb(238, 48, 108)
+                display: none
+                cursor: pointer
+
+                & .active_error
+                    display: inline
+
+    .footer
+        background: $color8
+        padding-top: 3vw
+        justify-content: center
+        padding-bottom: 3vw
+
+        &__img
+            height: 4.8vw
+            margin-bottom: 2vw
+
+        &__row
+            // margin-top: 1vw
+            // justify-content: space-evenly
+            display: flex
+            flex-direction: row
+
+            &__copy
+                margin-top: 1vw
+                color: #fff
+                width: 50vw
+                // flex: 1
+                font-size: 1.2vw
+                text-align: center
+                transition: color 0.3s ease
+                &:hover
+                    color: $color4
+
+            &__terminos
+                margin-top: 1vw
+                color: #fff
+                flex: 1
+                // width: 15vw
+                font-size: 1.2vw
+                text-align: center
+                transition: color 0.3s ease
+                &:hover
+                    color: $color4
+
+
+            &__privacidad
+                flex: 1
+                margin-top: 1vw
+                color: #fff
+                // width: 14vw
+                font-size: 1.2vw
+                text-align: center
+                margin-left: 2.5vw
+                transition: color 0.3s ease
+                &:hover
+                    color: $color4
+
+            &__cookies
+                margin-top: 1vw
+                color: #fff 
+                // width: 17.5vw
+                font-size: 1.2vw
+                flex: 1
+                text-align: center
+                transition: color 0.3s ease
+                &:hover
+                    color: $color4
+
+    #Gracias
+
+        & .risa-roja
+            position: absolute
+            top: 11vw
+            left: 20vw
+            height: 13.4vw
+            z-index: 10
+
+        & .container
+            background: $color10
+            height: 100vh
+            width: 100%
+            padding: 3.5vw 5.2vw
+
+            & .container-2
+                background: $color10
+                height: 100%
+                width: 100%
+                box-shadow: 1vw 1vw 6vw  rgba(0, 0, 0, 0.15)
+                justify-content: center
+                align-items: center
+
+                &__col
+                    justify-content: center
+                    // align-items: center
+                    height: 100%
+                    z-index: 100
+                    width: 100%
+
+                    &__text-1
+                        font-size: 5.6vw
+                        color: #fff
+                        width: 34vw
+                        margin-left: 20vw
+                        line-height: 1.2
+                        font-weight: 800
+                        & span 
+                            color: $color1
+
+                    &__text-2
+                        margin-left: -7vw
+                        width: 26vw
+                        margin-left: 20vw
+                        font-weight: 400
+                        font-size: 2vw
+                        color: #fff
+                        & span 
+                            font-weight: 800
+
+                    &__logo-b
+                        height: 4.8vw
+                        margin-top: 6vw
+                        margin-left: 15vw
+
+                &__3-ptos
+                    height: 8vw
+                    margin-right: 9.6vw
+            
+        & .btn-volver
+            bottom: 6.8vw
+            right: 8.3vw
+            position: absolute
+            font-size: 2vw
+            font-weight: 800
+            width: 13vw
+            color: #FFF
+            background: $color7
+            padding: 1vw 3vw
+            line-height: 1
+            border-radius: 5vw
+            z-index: 1000
+            transition: background 0.3s ease
+            &:hover
+                background: $color1
+    
+
+// Mobile
+@media only screen and (max-width: 750px) 
+    
+    #Desktop
+        display: none
+
+        
+    .popup
+        display: flex
+        flex-direction: column
+        justify-content: center
+        align-items: center
+        height: 100vh
+        width: 100%
+        position: fixed
+        z-index: 100
+
+        &__bg
+            background: rgba(0, 0, 0, 0.4)
+            // background: linear-gradient(0.5turn, #FFF0, #000a)
+            height: 100vh
+            width: 100%
+            z-index: 100
+            position: absolute
+
+        &__wrapper
+            z-index: 200
+            border-radius: 10vw 10vw 10vw 10vw
+            // border-radius: 2vw
+            width: 90vw
+            // height: 90vw
+            // background: #FFF
+            box-shadow: 3vw 3vw 6vw rgba(0, 0, 0, 0.4)
+            display: flex
+            flex-direction: column
+
+            &__row-top
+                background: $color11
+                padding: 5vw 12vw
+                border-radius: 10vw 10vw 0 0
+
+                &__text
+                    color: #FFF
+                    font-size: 4vw
+                    line-height: 1.6
+                    & > span 
+                        color: $color12
+                        font-size: 7vw
+                        font-weight: 800
+
+                    & > img 
+                        margin-top: 1vw
+                        // margin-left: -30vw
+                        margin-right: 5vw
+                        height: 15vw
+                        float: right
+
+            &__row-down
+                background: #FFF
+                display: flex
+                flex-direction: column
+                padding: 5vw 8vw
+                border-radius: 0 0 10vw 10vw 
+
+                &__label
+                    font-size: 4vw
+                    color: $color6
+
+                &__input 
+                    
+                    padding: 1vw 2vw
+                    width: 100%
+                    background: $color9
+                    border-radius: 2vw
+                    margin-bottom: 3vw
+                    resize: none
+
+                &__submit
+                    background: $color4
+                    transition: background 0.3s ease
+                    padding: 0.6vw 0.5vw 
+                    width: 60%
+                    border-radius: 2vw
+                    margin: 0 auto
+                    cursor: pointer
+                    color: #FFF
+                    font-size: 4vw
+                    font-weight: 500
+                    letter-spacing: 0.1vw
+                    margin-bottom: 2vw
+                    margin-top: 2vw
+
+    .popup-close
+        display: none
+
+
+    .pliar-morado
+        z-index: 10
+        width: 26.6vw
+        height: 65vw
+        background: $color1
+        position: absolute
+        border-radius: 0 0 3.9vw 0
+
+        &__img-pyndele-b
+            width: 20vw
+            margin-top: 3vw
+            margin-left: 3vw
+
+        &__img-risa-cortada
+            margin-top: 40vw
+            width: 22vw
+
+    .navbar
+        justify-content: flex-end
+        // width: 100%
+        // align-items: flex-end
+
+        &__equipo
+            margin-left: 30vw
+            // width: 14.5vw
+            font-size: 3vw
+            font-weight: 800
+            margin-top: 2.6vw
+            color: $color3
+            &::after
+                display: block
+                content: ''
+                width: 6vw
+                height: 0.3vw
+                margin: auto
+                margin-top: 0.3vw
+                background: $color4
+                transition: width 0.3s ease
+            &:hover::after
+                width: 100%
+
+        &__circulo
+            margin-left: 4vw
+            // width: 12.3vw
+            font-size: 3vw
+            font-weight: 800
+            margin-top: 2.6vw
+            color: $color3
+            &::after
+                display: block
+                content: ''
+                width: 6vw
+                height: 0.3vw
+                margin: auto
+                margin-top: 0.3vw
+                background: $color4
+                transition: width 0.3s ease
+            &:hover::after
+                width: 100%
+
+        
+
+        &__suscribete
+            margin-left: 4vw
+            margin-top: 4vw
+            margin-right: 4vw
+            font-size: 4vw
+            border-radius: 1.5vw
+            background: $color4
+            line-height: 1
+            text-align-last: center
+            padding: 2vw
+            cursor: pointer
+            color: #FFF
+            font-weight: 600
+            transition: background 0.3s ease
+            &:hover
+                background: $color10
+
+    .video-intro
+        z-index: 10
+        // width: 80vw
+        // height: 37vw
+        width: 100%
+        margin-top: 1vw
+        align-items: center
+        justify-content: center
+
+        &__video
+            padding: 0
+            margin-top: 3vw
+            width: 80vw;
+            height: 45vw;
+            border-radius: 3vw
+            margin-left: 5vw
+            background: rgba(0, 0, 0, 0.4) 
+
+        &__img-3ptos
+            height: 8vw
+            margin-left: 3vw
+
+        &__social-media
+            margin-top: 3vw
+            justify-content: flex-end
+            width: 65.5vw
+            height: 5vw
+
+            &__icon
+                height: 8vw
+                margin: 0 3vw
+                transition: all 0.3s ease
+                
+    .acerca-de-pyndele
+        padding: 5vw 10vw
+
+        &__title
+            margin-top: 5vw
+            width: 25vw
+            line-height: 1.2
+            font-size: 3.7vw
+            color: $color4
+
+            span 
+                display: inline-block
+                width: 40vw
+                color: $color1
+
+        &__linea-amarilla
+            margin-top: 1vw
+            margin-bottom: 0.5vw
+            height: 0.7vw
+            background: $color5
+            width: 10vw
+
+        
+        &__paragraph
+            margin-top: 3vw
+            font-size: 2.2vw
+            color: $color3
+
+    .carrusel
+        margin-top: 4.5vw
+        width: 100%
+        overflow: hidden  
+
+
+        &__title
+            width: 65.4vw
+            background: $color9
+            padding: 0.5vw 4vw
+            border-radius: 5vw
+            margin: auto
+            color: $color1
+            font-size: 3.7vw
+
+            & span
+                color: $color7
+    
+    .gallery
+        height: 70vw
+        width: 100%
+
+    .gallery .js-flickity
+        width: 100%
+        // display: flex
+        // height: 10vw
+
+    
+    .gallery-cell
+        cursor: grab
+        width: 100%
+        margin-top: 5vw
+        padding: 0 7vw
+        &:active
+            cursor: grabbing
+    
+    .nuestro-equipo
+        background: $color1
+        padding-top: 3.7vw
+        padding-bottom: 5.5vw
+        align-items: center       
+        width: 100%
+        transition: cursor 0.3s ease
+        
+        &__title
+            color: #fff
+            font-size: 4.46vw
+            width: 13vw
+            line-height: 1.15
+            margin-left: 13.2vw
+            &::before
+                margin-left: -0.5vw
+                display: block
+                content: ''
+                width: 12vw
+                height: 0.6vw
+                margin-bottom: 0.5vw
+                background: $color5
+                transition: width 0.3s ease
+
+            & span
+                color: $color4
+
+                
+        &__row
+            padding-top: 3vw
+
+            &__col-1
+                margin-left: 18vw
+
+                &__perfil
+                    align-items: center
+                    margin-bottom: 8.6vw
+
+                    &__nombre
+                        font-size: 3vw
+                        color: #fff
+                        font-weight: 700
+                        & span
+                            font-weight: 300
+
+                    &__area
+                        margin-top: 0.1vw
+                        font-size: 3vw
+                        color: $color4
+                        font-weight: 700
+
+                    &__img
+                        margin-top: 0.4vw
+                        height: 20vw
+
+
+    
+            &__col-2
+                margin-left: 13.4vw
+
+                &__perfil
+                    margin-top: 
+                    margin-bottom: 8.6vw
+                    align-items: center
+
+                    &__nombre
+                        font-size: 3vw
+                        color: #fff
+                        font-weight: 700
+                        & span
+                            font-weight: 300
+
+                    &__area
+                        margin-top: 0.1vw
+                        font-size: 3vw
+                        color: $color4
+                        font-weight: 700
+
+                    &__img
+                        margin-top: 0.4vw
+                        height: 20vw
+
+    .aprende-emprender
+        margin-top: 2vw
+        margin-bottom: 2vw
+        justify-content: center
+        align-items: center
+
+        &__img
+            height: 31.4vw
+
+        &-col
+            align-items: center
+
+            &__text-1
+                margin-left: 6vw
+                width: 33vw
+                font-size: 2.45vw
+                color: $color3
+                font-weight: 300
+                line-height: 1.2
+                padding-left: 0.5vw
+
+            &__text-2
+                width: 32vw
+                color: $color4
+                font-size: 4vw
+                margin-left: 6vw
+                line-height: 1.2
+
+            &__text-3
+                width: 32vw
+                color: $color7
+                line-height: 1.2
+                font-size: 4vw
+                margin-left: 6vw
+
+    .pyndele-en-camino
+
+        &__text-1
+            text-align: center
+            color: $color4
+            margin-left: -20vw
+            font-size: 3vw
+
+            
+        &__text-2
+            text-align: center
+            font-size: 3vw
+            color: $color4
+            margin-left: 25vw
+            margin-top: -2.2vw
+            margin-bottom: 6vw
+
+        &__risa-gris
+            height: 13vw
+            display: inline
+
+        &__3-ptos
+            height: 1.2vw
+            margin-bottom: 5vw
+
+    
+    .form
+        display: flex
+        flex-direction: row
+        align-items: center
+        background: $color9
+        padding-left: 2vw
+        justify-content: center
+        padding-top: 15vw
+        padding-bottom: 15vw
+
+
+
+    .fotter
+
+        justify-content: center
+
+        &__col
+            padding-top: 3vw
+            padding-bottom: 3vw
+            background: $color8
+
+            &__img
+                height: 6.2vw
+                margin-bottom: 2vw
+
+            &__copy
+                margin-top: 1vw
+                color: #fff
+                // width: 50vw
+                font-size: 2vw
+                text-align: center
+                transition: color 0.3s ease
+
+
+        &__row
+            margin-top: 3vw
+            margin-bottom: 3vw
+            justify-content: space-evenly
+
+
+            &__terminos
+                margin-top: 1vw
+                color: $color3
+                font-size: 2vw
+                text-align: center
+                transition: color 0.3s ease
+
+            &__privacidad
+                margin-top: 1vw
+                color: $color3
+                font-size: 2vw
+                text-align: center
+                margin-left: 2.5vw
+                transition: color 0.3s ease
+            &__cookies
+                margin-top: 1vw
+                color: $color3
+                font-size: 2vw
+                text-align: center
+                transition: color 0.3s ease
+
+
+        #Gracias
+
+        & .risa-roja
+            position: absolute
+            top: 11vw
+            left: 20vw
+            height: 13.4vw
+            z-index: 10
+
+        & .container
+            background: $color10
+            height: 100vh
+            width: 100%
+            padding: 3.5vw 5.2vw
+
+            & .container-2
+                background: $color10
+                height: 100%
+                width: 100%
+                box-shadow: 1vw 1vw 6vw  rgba(0, 0, 0, 0.15)
+                justify-content: center
+                align-items: center
+
+                &__col
+                    justify-content: center
+                    // align-items: center
+                    height: 100%
+                    z-index: 100
+                    width: 100%
+
+                    &__text-1
+                        font-size: 5.6vw
+                        color: #fff
+                        width: 34vw
+                        margin-left: 20vw
+                        line-height: 1.2
+                        font-weight: 800
+                        & span 
+                            color: $color1
+
+                    &__text-2
+                        margin-left: -7vw
+                        width: 26vw
+                        margin-left: 20vw
+                        font-weight: 400
+                        font-size: 2vw
+                        color: #fff
+                        & span 
+                            font-weight: 800
+
+                    &__logo-b
+                        height: 4.8vw
+                        margin-top: 6vw
+                        margin-left: 15vw
+
+                &__3-ptos
+                    height: 8vw
+                    margin-right: 9.6vw
+            
+        & .btn-volver
+            bottom: 6.8vw
+            right: 8.3vw
+            position: absolute
+            font-size: 2vw
+            font-weight: 800
+            width: 13vw
+            color: #FFF
+            background: $color7
+            padding: 1vw 3vw
+            line-height: 1
+            border-radius: 5vw
+            z-index: 1000
+            transition: background 0.3s ease
+            &:hover
+                background: $color1
+    
+    #Gracias
+
+        & .risa-roja
+            position: absolute
+            top: 40vw
+            left: 20vw
+            height: 13.4vw
+            z-index: 10
+
+        & .container
+            background: $color10
+            height: 100vh
+            width: 100%
+            padding: 3.5vw 5.2vw
+
+            & .container-2
+                background: $color10
+                height: 100%
+                width: 100%
+                box-shadow: 1vw 1vw 6vw  rgba(0, 0, 0, 0.15)
+                justify-content: center
+                align-items: center
+
+                &__col
+                    justify-content: center
+                    // align-items: center
+                    height: 100%
+                    z-index: 100
+                    width: 100%
+
+                    &__text-1
+                        font-size: 9.1vw
+                        color: #fff
+                        width: 55vw
+                        margin-left: 15vw
+                        line-height: 1.2
+                        z-index: 100
+                        font-weight: 800
+                        & span 
+                            color: $color1
+
+
+                    &__risa-roja
+                        margin-bottom: -20vw
+                        margin-left: -40vw
+                        height: 13.4vw
+                        z-index: 10
+
+                    &__text-2
+                        margin-left: -7vw
+                        width: 49vw
+                        margin-left: 20vw
+                        font-weight: 400
+                        font-size: 3.5vw
+                        z-index: 100
+                        color: #fff
+                        & span 
+                            font-weight: 800
+
+                    &__logo-b
+                        height: 9.85vw
+                        margin-top: 6vw
+                        // margin-left: 15vw
+                        
+                    &__btn
+                        font-size: 4.3vw
+                        font-weight: 800
+                        // width: 13vw
+                        color: #FFF
+                        background: $color7
+                        padding: 1vw 3vw
+                        line-height: 1
+                        border-radius: 5vw
+                        margin: 0px auto
+                        margin-top: 5vw
+                        margin-bottom: 5vw
+
+                &__3-ptos
+                    height: 1.4vw
+                    // margin-right: 9.6vw

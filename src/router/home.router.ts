@@ -2,13 +2,13 @@ import { Router } from 'express';
 import { getHome } from '../controller/home.controller';
 import { cache } from '../middleware/memory_cache';
 
-const router = Router();
+const portafolio = Router();
 
-router.get(
+portafolio.get(
     /* Nombre de ruta -->*/ '/', 
     [ /* Array de middlewares*/ cache(10) ],  
     /* Controller -->*/ getHome ,
 );
 
-export default router;
+export default portafolio;
 

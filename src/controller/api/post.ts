@@ -1,5 +1,7 @@
 import { Request, Response } from 'express';
+import moment from 'moment';
 import Mail from '../../mail/Mail';
+import stringFilter from '../../utils/filter.string';
 
 interface Body {
     nombre: string
@@ -7,6 +9,7 @@ interface Body {
     telefono: string
     mensaje: string
     nombreEmpresa: string
+    fecha?: string
 }
 
 const msjTextSkapxd = (data: Body) => {
@@ -35,7 +38,15 @@ Porfavor, no responder a este email.
 
 export const postPost = async ( req: Request, res: Response) => {
         
-    const body: Body = req.body;
+    const body: Body = {
+        correo : stringFilter(req.body['correo']),
+        mensaje: stringFilter(req.body['mensaje']),
+        nombre: stringFilter(req.body['nombre']),
+        nombreEmpresa: stringFilter(req.body['nombreEmpresa']),
+        telefono: stringFilter(req.body['telefono']),
+        fecha: moment().subtract(5, 'hours').format('YYYY[-]MM[-]DD HH:mm:ss')
+
+    } 
 
     if ( Object.keys(body).length === 0) {
         
